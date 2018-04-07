@@ -1,0 +1,27 @@
+<!-- File: chapter1/say hello world -->
+<!DOCTYPE html>
+<html >
+<body ng-app>
+<input type="text" ng-model="name" placeholder="Enter your name"/>
+<h5>Select One browser from list: </h5>
+<select ng-model="selectedVal">
+<option value="firefox">Mozila Firefox</option>
+<option value="chrome" selected="true">Google Chrome</option>
+<option value="ie">Internet explorer</option>
+</select><br/>
+<h5>Gender: </h5>
+<input type="radio" ng-model="gender" value="male" checked> Male&nbsp;
+  <input type="radio" ng-model="gender" value="female"> Female&nbsp;&nbsp;
+  <input type="radio" ng-model="gender" value="other"> Other  <br/>
+  
+  <input type="checkbox" ng-model="declaration"> I admit that i gave here all fake details...
+  <hr/>
+<h4>Hello <span ng-bind="name"></span>. Your fake details are given below: </h4>
+<h4>Selected Browser: <span ng-bind="selectedVal"></span></h4>
+<h4>Gender: <span ng-bind="gender"></span></h4>
+<h6>Declaration: <span ng-bind="declaration"></span></h6>
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+</body>
+</html>
