@@ -1,0 +1,49 @@
+<!-- File: chapter2/ng-repeat-example-1.html -->
+<html ng-app="notesApp">
+<head><title>Notes App</title>
+<style>
+.done {
+background-color: green;
+}
+.pending {
+background-color: red;
+}
+</style>
+
+</head>
+<body ng-controller="MainCtrl as ctrl">
+<table >
+<tr>
+<th>ID</th>
+<th>Label</th>
+<th>Asignee</th>
+</tr>
+<tr ng-repeat="note in ctrl.notes" ng-class="ctrl.getNoteClass(note.done)">
+<td><span class="id"> {{note.id}}</span></td>
+<td><span class="label"> {{note.label}}</span></td>
+<td><span class="asignee" ng-show="note.asignee" ng-bind="note.asignee"></span></td>
+</tr>
+</div>
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+angular.module('notesApp', [])
+.controller('MainCtrl', [function() {
+var self = this;
+self.notes = [
+{id: 1, label: 'First Note', done: true, asignee: 'ARKA'},
+{id: 2, label: 'Second Note', done: false},
+{id: 3, label: 'Done Note', done: true, asignee:'INDRA'},
+{id: 4, label: 'Last Note', done: false}
+];
+self.getNoteClass = function(status) {
+return {
+done: status,
+pending: !status
+};
+};
+}]);
+</script>
+</body>
+</html>
