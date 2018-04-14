@@ -1,8 +1,0 @@
-// File: chapter5/item-service-using-provider/app.js
-function ItemService(opt_items) {
-var items = opt_items || [];
-this.list = function() {
-return items;
-};
-this.add = function(item) {
-items.push(item);
