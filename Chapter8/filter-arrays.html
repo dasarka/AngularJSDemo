@@ -28,6 +28,20 @@ limitTo:7">
 {{note.label}} -: {{note.type}} -: {{note.done}}
 </li>
 </ul>
+<ul>
+<li >
+	Username(upto 4 character): {{ctrl.name |limitTo:4}}
+</li>
+<li >
+	Username(upto 6 character): {{ctrl.name |limitTo:6}}
+</li>
+<li >
+	Username(upto 10 character): {{ctrl.name |limitTo:10}}
+</li>
+<li >
+	Original Username: {{ctrl.name }}
+</li>
+</ul>
 </div>
 <script
 src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
@@ -35,6 +49,7 @@ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
 <script type="text/javascript">
 angular.module('filtersApp', [])
 .controller('FilterCtrl', [function() {
+this.name="dasarka6769868";
 this.notes = [
 {label: 'FC Todo', type: 'chore', done: false},
 {label: 'FT Todo', type: 'task', done: false},
