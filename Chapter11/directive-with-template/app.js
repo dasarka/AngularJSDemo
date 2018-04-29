@@ -9,6 +9,7 @@ self.stocks = [
 {name: 'Fourth Stock', price: 400, previous: 420}
 ];
 self.getChange = function(stock) {
+	console.log(stock);
 return Math.ceil((
 (stock.price - stock.previous) / stock.previous) * 100);
 };
